@@ -1,0 +1,36 @@
+<ion-view view-title="Profile">
+  <ion-content>
+    <div class="list">
+      <div class="item item-avatar">
+        <img ng-src="{{user.image}}">
+
+        <h2> {{user.username}}</h2>
+        <span class="item-note">
+          <button class="button button-royal button-clear button-small" ui-sref="followers({'id':user.id})" style="font-size: .8em">
+            50<br/>
+            Followers
+          </button>
+        </span>
+        <span class="item-note">
+          <button class="button button-royal button-clear button-small" ui-sref="following({'id':user.id})" style="font-size: .8em">
+            50<br/>
+            Following
+          </button>
+        </span>
+      </div>
+    </div>
+    <ion-list class="card">
+      <ion-item ng-repeat="p in posts" class="item-avatar item-avatar-left">
+        <img ng-src="{{user.image}}">
+        <h2>{{p.user.username}}</h2>
+        <ion-item class="item-body">
+          <img ng-if="p.image" class="full-image" ng-src="{{p.image}}">
+          <p ng-if="p.content">
+            {{p.content}}
+          </p>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if="canLoad" on-infinite="load()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

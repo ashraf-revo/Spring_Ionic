@@ -1,0 +1,12 @@
+---
+applications:
+- name: soklin
+  memory: 1G
+  instances: 1
+  host: soklin-${random-word}
+  buildpack: java_buildpack
+  path: target/soklin-0.0.1-SNAPSHOT.jar
+  env:
+    SPRING_PROFILES_ACTIVE: dev
+  services:
+  - mongodb

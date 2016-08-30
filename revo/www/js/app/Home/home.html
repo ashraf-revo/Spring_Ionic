@@ -1,0 +1,19 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <ion-list class="card">
+      <ion-item ng-repeat="p in posts" class="item-avatar item-avatar-left">
+        <img ng-src="{{user.image}}">
+        <h2>{{p.user.username}}</h2>
+        <ion-item class="item-body">
+          <img ng-if="p.image" class="full-image" ng-src="{{p.image}}">
+          <p ng-if="p.content">
+            {{p.content}}
+          </p>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if="canLoad" on-infinite="load()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+  <ion-floating-button click="newPost()" has-footer="true" button-color="#2AC9AA" icon="ion-plus"></ion-floating-button>
+
+</ion-view>

@@ -1,0 +1,30 @@
+<ion-view view-title="Register">
+    <ion-content>
+        <div class="list card">
+<!--
+            <ion-item class="item-body">
+                <img src="../../../img/logo/a2.jpg" style=" margin-left: auto;margin-right: auto;display: block;">
+            </ion-item>
+-->
+            <label class="item item-input">
+                <i class="icon ion-person placeholder-icon"></i>
+                <input type="text" placeholder="John" ng-model="user.username">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-locked placeholder-icon"></i>
+                <input type="password" placeholder="..........." ng-model="user.password">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-royal" ng-click="register()">Register</button>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button ui-sref="login" class="button button-royal button-clear">
+                    Alardy Have  Account
+                </button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

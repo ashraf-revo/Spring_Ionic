@@ -1,0 +1,16 @@
+<ion-view view-title="{{follow}}">
+  <ion-content>
+    <div class="list card">
+      <ion-item class="item-avatar" ng-repeat="user in users">
+        <img src="../../../../img/ionic.png">
+
+        <h2>{{user.username}}</h2>
+        <span class="item-note">
+          <button class="button button-royal button-clear"
+                  ng-click="follow(user,!inUsers(user))">{{inUsers(user)?'Un Follow':'Follow'}}
+          </button>
+        </span>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>
