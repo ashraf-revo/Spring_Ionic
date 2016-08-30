@@ -3,13 +3,13 @@
     <div class="list card">
 
       <ion-item class="item item-avatar" ng-repeat="user in users">
-        <img src="../../../../img/ionic.png" ui-sref="profile({'id':user.id})">
+        <img ng-src="{{user.image}}" ui-sref="profile({'id':user.id})">
         <h2>{{user.username}}</h2>
         <span class="item-note">
           <button class="button button-royal button-clear" ng-click="follow(user,!inUsers(user))">{{inUsers(user)?'Un Follow':'Follow'}}</button>
         </span>
       </ion-item>
     </div>
-        <ion-infinite-scroll ng-if="canLoad" distance="1%" on-infinite="load()"></ion-infinite-scroll>
+    <ion-infinite-scroll ng-if="canLoad" distance="1%" on-infinite="load()"></ion-infinite-scroll>
   </ion-content>
 </ion-view>

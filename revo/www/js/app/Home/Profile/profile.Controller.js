@@ -14,5 +14,4 @@ angular.module("starter").controller("ProfileCtrl", function ($scope, User, Post
       $scope.$broadcast('scroll.infiniteScrollComplete');
     });
   };
-  $scope.load();
 });
